@@ -1,0 +1,14 @@
+body {
+    background: rgba(0, 0, 0, 0.700);
+
+};
+
+.wellcom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
+.text {
+    color:aliceblue;
+    border:solid 1px burlywood ;
+}
