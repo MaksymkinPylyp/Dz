@@ -1,6 +1,5 @@
 "use strict";
 
- 
 const personalMovieDB = {
     count: 0, 
     movies: {}, 
@@ -9,7 +8,6 @@ const personalMovieDB = {
     privat: false,
     start: function () {
         personalMovieDB.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
-    
         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
             personalMovieDB.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
         }
