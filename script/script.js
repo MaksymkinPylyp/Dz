@@ -12,7 +12,6 @@ const personalMovieDB = {
             personalMovieDB.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
         }
         personalMovieDB.rememberMyFilms();
-
     },
     rememberMyFilms: function () {
         for (let i = 0; i < 2; i++) {
@@ -48,7 +47,6 @@ const personalMovieDB = {
                 i--;
             } else {
                 personalMovieDB.genres[i - 1] = genre;
-
             }
         }
         personalMovieDB.genres.forEach((item, i) => {console.log(`Любимый жанр ${i + 1} - это ${item}`);});
@@ -69,4 +67,5 @@ const personalMovieDB = {
 };
 
 personalMovieDB.start();
+
 // personalMovieDB.toggleVisibleMyDB ();
