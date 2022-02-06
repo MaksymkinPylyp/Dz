@@ -7,9 +7,9 @@ const personalMovieDB = {
     genres: [],
     privat: false,
     start: function () {
-        personalMovieDB.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
-            personalMovieDB.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
+        this.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
+        while (this.count === '' || this.count === null || isNaN(this.count)){
+            this.count = +prompt ('Сколько фильмов вы уже посмотрели?' , '');
         }
         personalMovieDB.rememberMyFilms();
     },
@@ -18,7 +18,7 @@ const personalMovieDB = {
             const a = prompt ('Один из последних просмотренных фильмов?' , ''),
                   b = prompt ('На сколько оцените его?' , '');
             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                personalMovieDB.movies[a] = b;
+                this.movies[a] = b;
                 console.log('done');
             } else {
                 console.log('error');
@@ -46,21 +46,21 @@ const personalMovieDB = {
                 console.log('error');
                 i--;
             } else {
-                personalMovieDB.genres[i - 1] = genre;
+                this.genres[i - 1] = genre;
             }
         }
-        personalMovieDB.genres.forEach((item, i) => {console.log(`Любимый жанр ${i + 1} - это ${item}`);});
-        personalMovieDB.showMyBD();
+        this.genres.forEach((item, i) => {console.log(`Любимый жанр ${i + 1} - это ${item}`);});
+        this.showMyBD();
     },
     toggleVisibleMyDB: function () {
-        if (personalMovieDB.privat) {
-            personalMovieDB.privat = false;
+        if (this.privat) {
+            this.privat = false;
         } else {
-            personalMovieDB.privat = true;
+            this.privat = true;
         }
     },
     showMyBD: function  () {
-        if (personalMovieDB.privat === false) {
+        if (!this.privat) {
             console.log(personalMovieDB);
         }
     }
